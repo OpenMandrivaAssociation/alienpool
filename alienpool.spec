@@ -13,6 +13,7 @@ Source2:	%{name}-32.png
 Source3:	%{name}-48.png
 URL:		http://mike.taequin.org/alienpool/
 Group:		Games/Arcade
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 License:	GPL
 Requires:	SDL >= 0:1.2
 Requires:	SDL_image >= 0:1.2
