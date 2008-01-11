@@ -40,12 +40,6 @@ aliens.
 %install
 %makeinstall_std
 
-install -d -m 755 $RPM_BUILD_ROOT%{_menudir}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} << EOF
-?package(%name):needs=x11 section="More Applications/Games/Arcade" \
-title="Alien Pool" longtitle="Arcade-style mix of asteroids and pool" \
-command="%{_gamesbindir}/%{name}" icon="%{name}.png" xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -85,7 +79,6 @@ EOF
 %{_mandir}/man6/%{name}.6*
 %{_datadir}/pixmaps/%{name}-48.png
 %{_datadir}/applications/mandriva-%{name}.desktop
-%{_menudir}/%{name}
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
