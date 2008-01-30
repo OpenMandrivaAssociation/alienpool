@@ -15,10 +15,10 @@ URL:		http://mike.taequin.org/alienpool/
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 License:	GPLv2+
-BuildRequires:	SDL1.2-devel
-BuildRequires:	SDL_image1.2-devel
-BuildRequires:	SDL_mixer1.2-devel
-BuildRequires:	SDL_ttf-devel >= 0:2.0
+BuildRequires:	SDL-devel
+BuildRequires:	SDL_image-devel
+BuildRequires:	SDL_mixer-devel
+BuildRequires:	SDL_ttf-devel
 
 %description
 Alienpool is a space-shooter that is similar to both asteroids
