@@ -1,6 +1,6 @@
 %define name	alienpool
 %define version	0.2.0
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Name:		%{name}
 Summary:	Arcade-style mix of asteroids and pool
@@ -14,11 +14,7 @@ Source3:	%{name}-48.png
 URL:		http://mike.taequin.org/alienpool/
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-License:	GPL
-Requires:	SDL >= 0:1.2
-Requires:	SDL_image >= 0:1.2
-Requires:	SDL_mixer >= 0:1.2
-Requires:	SDL_ttf >= 0:2.0
+License:	GPLv2+
 BuildRequires:	SDL1.2-devel
 BuildRequires:	SDL_image1.2-devel
 BuildRequires:	SDL_mixer1.2-devel
@@ -40,7 +36,6 @@ aliens.
 %install
 %makeinstall_std
 
-
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
@@ -50,9 +45,8 @@ Exec=%{_gamesbindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=X-MandrivaLinux-MoreApplications-Games-Arcade;Game;ArcadeGame;
+Categories=Game;ArcadeGame;
 EOF
-
 
 %__install -D -m 644 %SOURCE1 $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
 %__install -D -m 644 %SOURCE2 $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
@@ -82,4 +76,3 @@ EOF
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
-
