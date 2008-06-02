@@ -67,7 +67,7 @@ EOF
 %defattr(0644,root,root,0755)
 %doc README NEWS COPYING AUTHORS
 %attr(2755, root, games) %{_gamesbindir}/%{name}
-%attr(664, root, games) %{_localstatedir}/games/*
+%attr(664, root, games) %{_localstatedir}/lib/games/*
 %dir %{_gamesdatadir}/%{name}
 %{_gamesdatadir}/%{name}/*
 %{_mandir}/man6/%{name}.6*
