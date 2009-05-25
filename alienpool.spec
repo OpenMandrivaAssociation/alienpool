@@ -1,17 +1,17 @@
 %define name	alienpool
 %define version	0.2.0
-%define release	%mkrel 4
+%define release	%mkrel 5
 
 Name:		%{name}
 Summary:	Arcade-style mix of asteroids and pool
 Version:	%{version}
 Release:	%{release}
 Epoch:		1
-Source0:	http://mike.taequin.org/alienpool/%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.tar.bz2
 Source1:	%{name}-16.png
 Source2:	%{name}-32.png
 Source3:	%{name}-48.png
-URL:		http://mike.taequin.org/alienpool/
+URL:		http://www.mkorman.org/alienpool/
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 License:	GPLv2+
@@ -30,14 +30,15 @@ aliens.
 %setup -q
 
 %build
-%configure --bindir=%{_gamesbindir}
+%configure --bindir=%{_gamesbindir} --localstatedir=%{_localstatedir}/lib
 %make
 
 %install
+rm -rf %{buildroot}
 %makeinstall_std
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=Alien pool
 Comment=Arcade-style mix of asteroids and pool
@@ -48,14 +49,14 @@ Type=Application
 Categories=Game;ArcadeGame;
 EOF
 
-%__install -D -m 644 %SOURCE1 $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
-%__install -D -m 644 %SOURCE2 $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
-%__install -D -m 644 %SOURCE3 $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
+%__install -D -m 644 %SOURCE1 %{buildroot}%{_iconsdir}/%{name}.png
+%__install -D -m 644 %SOURCE2 %{buildroot}%{_miconsdir}/%{name}.png
+%__install -D -m 644 %SOURCE3 %{buildroot}%{_liconsdir}/%{name}.png
 
-%__rm -f $RPM_BUILD_ROOT%{_datadir}/pixmaps/alienpool.xpm
+%__rm -f %{buildroot}%{_datadir}/pixmaps/alienpool.xpm
 
 %clean
-%__rm -rf $RPM_BUILD_ROOT
+%__rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post
