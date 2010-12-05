@@ -1,6 +1,6 @@
 %define name	alienpool
 %define version	0.2.0
-%define release	%mkrel 6
+%define release	%mkrel 7
 
 Name:		%{name}
 Summary:	Arcade-style mix of asteroids and pool
