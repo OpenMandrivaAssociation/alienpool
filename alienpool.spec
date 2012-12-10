@@ -1,6 +1,6 @@
 %define name	alienpool
 %define version	0.2.0
-%define release	%mkrel 7
+%define release	%mkrel 6
 
 Name:		%{name}
 Summary:	Arcade-style mix of asteroids and pool
@@ -81,3 +81,56 @@ EOF
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
+
+
+%changelog
+* Tue Feb 09 2010 Sandro Cazzaniga <kharec@mandriva.org> 1:0.2.0-6mdv2010.1
++ Revision: 503408
+- rebuild
+
+* Mon May 25 2009 JÃ©rÃ´me Brenier <incubusss@mandriva.org> 1:0.2.0-5mdv2010.0
++ Revision: 379660
+- adapt to localstatedir being /var instead of /var/lib
+- fix URL / Source
+- delete buildroot before install
+- cosmetic changes
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
+
+* Wed Jan 30 2008 Funda Wang <fwang@mandriva.org> 1:0.2.0-2mdv2008.1
++ Revision: 160133
+- simplify BR's version
+- drop requirement on SDL*
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - drop old menu
+
+* Thu Dec 20 2007 Olivier Blin <oblin@mandriva.com> 1:0.2.0-1mdv2008.1
++ Revision: 135819
+- restore BuildRoot
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill re-definition of %%buildroot on Pixel's request
+    - import alienpool
+
+
+* Tue Sep 05 2006 Stéphane Téletchéa <steletch@mandriva.org> 1:0.2.0-1mdv2007.0
+- Migration to XDG menu structure
+- Add mkrel
+
+* Wed Jun 28 2006 Lenny Cartier <lenny@mandriva.com> 0:0.2.0-2mdv2007.0
+- rebuild
+
+* Thu Sep 02 2004 David Walluck <walluck@linux-mandrake.com> 0:0.2.0-1mdk
+- 0.2.0
+
+* Thu Jun 17 2004 Laurent MONTEL <lmontel@mandrakesoft.com> 0.1.0-2mdk
+- Rebuild
+
+* Sun Feb 15 2004 David Walluck <walluck@linux-mandrake.com> 0:0.1.0-1mdk
+- release
