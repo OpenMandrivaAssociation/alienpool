@@ -11,7 +11,7 @@ Source0:	%{name}-%{version}.tar.bz2
 Source1:	%{name}-16.png
 Source2:	%{name}-32.png
 Source3:	%{name}-48.png
-URL:		http://www.mkorman.org/alienpool/
+URL:		https://www.mkorman.org/alienpool/
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 License:	GPLv2+
