@@ -15,6 +15,11 @@ URL:		https://www.mkorman.org/alienpool/
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 License:	GPLv2+
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
